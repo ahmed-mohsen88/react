@@ -6,44 +6,28 @@ import LogLayOut from "./users/LogLayOut";
 import DashBoard from "./pages/DashBoard";
 
 function App() {
-    const [appEmail, setappEmail] = useState("");
-    console.log(appEmail);
+  const [appEmail, setappEmail] = useState("");
+  console.log(appEmail);
 
-    return (
-        <>
-            <BrowserRouter>
-                <Routes>
-                    <Route
-                        path="/"
-                        element={<Home setappEmail={setappEmail} />}
-                    />
-                    <Route
-                        path="/thankYou"
-                        element={<ThankYou appEmail={appEmail} />}
-                    />
-                    <Route
-                        path="/login"
-                        element={
-                            <LogLayOut
-                                buttonText={"Sign In"}
-                                title={"Sign in"}
-                            />
-                        }
-                    />
-                    <Route
-                        path="/signup"
-                        element={
-                            <LogLayOut
-                                buttonText={"Sign up"}
-                                title={"Sign up"}
-                            />
-                        }
-                    />
-                    <Route path="/dashboard" element={<DashBoard />} />
-                </Routes>
-            </BrowserRouter>
-        </>
-    );
+  return (
+    <main>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home setappEmail={setappEmail} />} />
+          <Route path="/thankYou" element={<ThankYou appEmail={appEmail} />} />
+          <Route
+            path="/login"
+            element={<LogLayOut buttonText={"Sign In"} title={"Sign in"} />}
+          />
+          <Route
+            path="/signup"
+            element={<LogLayOut buttonText={"Sign up"} title={"Sign up"} />}
+          />
+          <Route path="/dashboard" element={<DashBoard />} />
+        </Routes>
+      </BrowserRouter>
+    </main>
+  );
 }
 
 export default App;
